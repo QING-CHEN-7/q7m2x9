@@ -1,0 +1,32 @@
+name: apk-release
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/apk-release.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: fetch apk
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-delay 5 --max-time 3600 -o a3.apk "http://189.24.79.93:18080/a3.apk"
+          ls -l a3.apk
+          echo "SHA=$(sha256sum a3.apk | cut -d' ' -f1)" | tee -a "$GITHUB_ENV"
+      - name: publish release asset
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release create v1.36.4 a3.apk \
+            --repo "${{ github.repository }}" \
+            --title "build 1.36.4" \
+            --notes "sha256: $SHA"
+          gh release view v1.36.4 --repo "${{ github.repository }}" --json url -q .url
