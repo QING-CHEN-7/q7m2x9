@@ -1,0 +1,18 @@
+{
+  "A": {
+    "versionCode": 175,
+    "versionName": "1.32.4",
+    "url": "/apk/aux.apk",
+    "size": 170255330,
+    "sha256": "23b632f0b30f40fd8aed7e59a040f5485d0a3ec228e855f2ccb7556e8b9aaa87",
+    "note": "aux build"
+  },
+  "B": {
+    "versionCode": 253,
+    "versionName": "1.36.4",
+    "url": "https://ghfast.top/https://github.com/QING-CHEN-7/q7m2x9/releases/download/v1.36.4/a3.apk",
+    "size": 170287422,
+    "sha256": "d6e5d1b5ef4fc77978a10bca2b879dd7df85834637b2f21d89fe4378c9655fe7",
+    "mirror_url": "/apk/mirror.apk"
+  }
+}
