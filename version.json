@@ -8,11 +8,11 @@
     "note": "aux build"
   },
   "B": {
-    "versionCode": 254,
-    "versionName": "1.36.5",
-    "url": "https://ghfast.top/https://github.com/QING-CHEN-7/q7m2x9/releases/download/v1.36.5/build.bin",
-    "size": 170287422,
-    "sha256": "a260237acfd246ad2491a5e19532b1106b9f1656085ec52e70fa669470e8be38",
+    "versionCode": 255,
+    "versionName": "1.36.6",
+    "url": "https://ghfast.top/https://github.com/QING-CHEN-7/q7m2x9/releases/download/v1.36.6/build.bin",
+    "size": 170283602,
+    "sha256": "7b17fdeef4616f72ac5fa032119db33dae4f10863a685a712e29c4e0e0f81528",
     "mirror_url": "/apk/mirror.apk"
   }
 }
