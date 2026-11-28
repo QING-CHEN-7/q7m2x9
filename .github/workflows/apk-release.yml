@@ -23,8 +23,8 @@ jobs:
       - name: verify size+sha
         run: |
           set -euo pipefail
-          test "$(stat -c%s build.bin)" -eq 170283602
-          test "$SHA" = "7b17fdeef4616f72ac5fa032119db33dae4f10863a685a712e29c4e0e0f81528"
+          test "$(stat -c%s build.bin)" -eq 170286658
+          test "$SHA" = "f772f8633c68cbc78f01273a1822d7cf5d1e10a8a60023ea4ad4fa7edc93cff1"
       - name: publish release asset
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
