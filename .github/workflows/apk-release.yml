@@ -17,9 +17,14 @@ jobs:
       - name: fetch apk (from home mirror)
         run: |
           set -euo pipefail
-          curl -fkL --retry 5 --retry-delay 5 --max-time 3600 -o build.bin "https://189.24.79.93:9443/apk/mirror.apk"
+          curl -fkL -A "AO3MirrorApp/1.0" --retry 5 --retry-delay 5 --max-time 3600 -o build.bin "https://189.24.79.93:9443/apk/mirror.apk"
           ls -l build.bin
           echo "SHA=$(sha256sum build.bin | cut -d' ' -f1)" | tee -a "$GITHUB_ENV"
+      - name: verify size
+        run: |
+          set -euo pipefail
+          test "$(stat -c%s build.bin)" -eq 170283602
+          test "$SHA" = "7b17fdeef4616f72ac5fa032119db33dae4f10863a685a712e29c4e0e0f81528"
       - name: publish release asset
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
